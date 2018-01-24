@@ -1,0 +1,40 @@
+{
+  "name": "promo5-js-authentication",
+  "version": "1.0.0",
+  "description": "A javascript project using Webpack, OOP and MVC structure for a client side authentication (not secured)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build & npm run serve",
+    "serve": "lite-server --baseDir dist",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplon-lyon/promo5-js-authentication.git"
+  },
+  "keywords": [
+    "javascript",
+    "webpack",
+    "simplon"
+  ],
+  "author": "Simplon",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/simplon-lyon/promo5-js-authentication/issues"
+  },
+  "homepage": "https://github.com/simplon-lyon/promo5-js-authentication#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.3.1",
+    "css-loader": "^0.28.9",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
