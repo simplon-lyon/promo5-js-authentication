@@ -12,3 +12,6 @@ I. Le Modèle
 3) Faire les méthode en question, le get by login doit en gros aller chercher la liste d'utilisateurs stockée dans le localStorage (si celle ci existe), convertir cette liste en objet javascript via un JSON.parse puis vérifier dans la liste si un utilisateur correspond au couple mail / pass donné en argument de la méthode
 4) La méthode addUser va récupérer la liste des utilisateurs stockée en localStorage,  si elle existe, la parse avec JSON.parse, puis ajoute le nouvel utilisateur au tableau, avant de faire un JSON.stringify du tableau puis de le remettre dans le localStorage
 5) Testez ces méthodes en console sans affichage via le index.js ou autre
+
+Bonus optimisation : 
+On remarque que les deux méthodes du ModelUser commencent par aller chercher le contenu du localStorage puis le convertissent en tableau javascript, ce comportement peut sans doute être externalisée dans une autre méthode voir même être fait au moment de l'instanciation du Model ?
