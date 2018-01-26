@@ -19,6 +19,7 @@ export class UserModel {
         if (allUsers) {
             //On le parse et on le met dans la variable users
             users = JSON.parse(allUsers);
+            
         }
         //Qu'on ait le tableau vide ou celui du localStorage, on push
         //le nouvel utilisateur dedans
@@ -45,5 +46,17 @@ export class UserModel {
         }
         // si aucun user n'a été trouvé, on retourne undefined
         return undefined;
+    }
+    deleteUser(email){
+        let userList = JSON.parse(localStorage.getItem('users'));
+        
+        for (let index = 0; index < userList.length; index++) {
+           
+            if (userList[index].email === email){
+                userList.splice(index,1);
+                break;
+            }
+        }
+        localStorage.setItem('users',JSON.stringify(userList));
     }
 }

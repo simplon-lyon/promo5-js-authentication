@@ -17,3 +17,7 @@ console.log(model.getUserByLogin(mrToto.email,mrToto.password));
 
 // Lorsqu'on n'a pas d'user correspondant à l'email et au mot de passe, on reçoit undefined.
 console.log(model.getUserByLogin("no@boby.com", "securepassword"));
+
+model.deleteUser(mrToto.email);
+console.log(model.getUserByLogin(mrToto.email,mrToto.password));
+
