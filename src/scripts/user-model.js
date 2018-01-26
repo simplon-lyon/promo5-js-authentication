@@ -47,16 +47,43 @@ export class UserModel {
         // si aucun user n'a été trouvé, on retourne undefined
         return undefined;
     }
+    /**
+     * La méthode deleteUser permet de supprimer un user à partir de son email.
+     * @param {String} email 
+     */
     deleteUser(email){
+        // on récupère le tableau d'users dans le localStorage
         let userList = JSON.parse(localStorage.getItem('users'));
-        
+        // pour chaque user...
         for (let index = 0; index < userList.length; index++) {
-           
+           //... on verifie si l'email correspond à celui été passé en paramètre de la méthode.
             if (userList[index].email === email){
+                // si on trouve l'user, on le supprime du tableau
                 userList.splice(index,1);
+                // et on arrête la boucle
                 break;
             }
         }
+        // on sauvegarde ensuite le tableau dans le localStorage
+        localStorage.setItem('users',JSON.stringify(userList));
+    }
+    updateUser(email, name, surname, birthDate, password) {
+        // on récupère le tableau d'users dans le localStorage
+        let userList = JSON.parse(localStorage.getItem('users'));
+        // pour chaque users dans le tableau...
+        for (let index = 0; index < userList.length; index++) {
+           //... on verifie si l'email correspond à celui été passé en paramètre de la méthode.
+            if (userList[index].email === email){
+                // si on trouve l'user, on mets à jour ses données
+                userList[index].name = name;
+                userList[index].surname = surname;
+                userList[index].birthDate = birthDate;
+                userList[index].password = password;
+                // et on arrête la boucle
+                break;
+            }
+        }
+        // on sauvegarde ensuite le tableau dans le localStorage
         localStorage.setItem('users',JSON.stringify(userList));
     }
 }
